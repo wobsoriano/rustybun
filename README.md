@@ -1,6 +1,6 @@
-# Rustybun
+# RustyBun
 
-Readline implementation in Rust for Bun. [Rustyline](https://github.com/kkawakam/rustyline) Bun ffi wrapper.
+Readline implementation in Rust for Bun. [RustyLine](https://github.com/kkawakam/rustyline) Bun ffi wrapper.
 
 ## Install
 
@@ -11,9 +11,9 @@ bun add rustybun
 ## Usage
 
 ```js
-import Rustybun from 'rustybun'
+import RustyBun from 'rustybun'
 
-const rl = new Rustybun()
+const rl = new RustyBun()
 
 while (true) {
   const line = rl.readline();

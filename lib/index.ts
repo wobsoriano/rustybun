@@ -1,7 +1,7 @@
 import { ptr } from 'bun:ffi'
 import { symbols, encode } from './ffi'
 
-class Rustybun {
+class RustyBun {
   #rl: bigint
 
   constructor() {
@@ -31,6 +31,6 @@ class Rustybun {
 }
 
 export {
-  Rustybun,
-  Rustybun as default
+  RustyBun,
+  RustyBun as default
 }
