@@ -1,9 +1,4 @@
 node_modules
 dist
 .DS_Store
-
-!target/
-target/*
-!target/release/
-target/release/*
-!target/release/librustybun.dylib
+/target
