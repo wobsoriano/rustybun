@@ -13,10 +13,12 @@ bun add rustybun
 ```js
 import RustyBun from 'rustybun'
 
-const rl = new RustyBun()
+const rb = new RustyBun()
+
+rb.loadHistory('history.txt')
 
 while (true) {
-  const line = rl.readline();
+  const line = rb.readline();
   if (line.signal === 'CtrlC') {
     console.log('CtrlC')
     break
@@ -27,6 +29,8 @@ while (true) {
   }
   console.log(line.value)
 }
+
+rb.saveHistory('history.txt')
 ```
 
 ## License

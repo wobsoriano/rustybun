@@ -4,10 +4,10 @@ const rl = new Rustybun()
 
 const filename = `./history.txt`
 const location = new URL(filename, import.meta.url).pathname
-
-rl.loadHistory(location)
-
+console.log(location)
 while (true) {
+  let result = rl.loadHistory(location)
+  console.log(result)
   const line = rl.readline();
   if (line.signal === "CtrlC") {
     console.log("CtrlC");
@@ -18,5 +18,6 @@ while (true) {
     break;
   }
   console.log(line.value);
-  rl.saveHistory(location);
+  result = rl.saveHistory(location);
+  console.log(result)
 }
