@@ -1,6 +1,16 @@
 import Rustybun from "./lib";
 
-const rb = new Rustybun()
+const rl = new Rustybun()
 
-const line = rb.readline()
-console.log(line)
+while (true) {
+  const line = rl.readline();
+  if (line.signal === "CtrlC") {
+    console.log("CtrlC");
+    break;
+  }
+  if (line.signal === "CtrlD") {
+    console.log("CtrlD");
+    break;
+  }
+  console.log(line.value);
+}
