@@ -11,7 +11,7 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "description": "",
+  "description": "Readline Implementation in Rust for Bun.",
   "scripts": {
     "build": "tsup",
     "build:rust": "./build.sh",
@@ -19,10 +19,12 @@
     "prepublishOnly": "bun run build"
   },
   "files": [
-    "dist"
+    "dist",
+    "target/release/librustybun.dylib"
   ],
   "keywords": [
-    "bun"
+    "bun",
+    "readline"
   ],
   "license": "MIT",
   "homepage": "https://github.com/wobsoriano/pkg-name#readme",
