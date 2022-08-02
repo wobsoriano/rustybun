@@ -28,6 +28,32 @@ class RustyBun {
       value: signal.Success[0],
     }
   }
+
+  loadHistory(path: string) {
+    const str = symbols.load_history(this.#rl, ptr(encode(path))).toString()
+    if (str === '') {
+      return {
+        success: true
+      }
+    }
+    return {
+      success: false,
+      message: str as string
+    }
+  }
+
+  saveHistory(path: string) {
+    const str = symbols.save_history(this.#rl, ptr(encode(path))).toString()
+    if (str === '') {
+      return {
+        success: true
+      }
+    }
+    return {
+      success: false,
+      message: str as string
+    }
+  }
 }
 
 export {

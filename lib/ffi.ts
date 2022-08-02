@@ -13,6 +13,14 @@ export const {
     args: ['pointer', 'pointer'],
     returns: 'cstring'
   },
+  load_history: {
+    args: ['pointer', 'pointer'],
+    returns: 'cstring'
+  },
+  save_history: {
+    args: ['pointer', 'pointer'],
+    returns: 'cstring'
+  }
 })
 
 const utf8e = new TextEncoder()
