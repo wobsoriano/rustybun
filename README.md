@@ -15,7 +15,10 @@ import RustyBun from 'rustybun'
 
 const rb = new RustyBun()
 
-rb.loadHistory('history.txt')
+const { success } = rb.loadHistory('history.txt')
+if (!success) {
+  console.log('No previous history.')
+}
 
 while (true) {
   const line = rb.readline();
