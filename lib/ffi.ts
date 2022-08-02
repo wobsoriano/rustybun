@@ -1,8 +1,10 @@
 import { dlopen, suffix } from 'bun:ffi'
 
+const filename = `../target/release/librustybun.${suffix}`
+const location = new URL(filename, import.meta.url).pathname
 export const {
   symbols
-} = dlopen(`./target/release/librustybun.${suffix}`, {
+} = dlopen(location, {
   create: {
     args: [],
     returns: 'pointer'
