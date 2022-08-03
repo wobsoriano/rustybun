@@ -1,6 +1,21 @@
-import { dlopen, suffix } from 'bun:ffi'
+import { dlopen } from 'bun:ffi'
 
-const filename = `../target/release/librustybun.${suffix}`
+const { platform, arch } = process
+
+let filename = ''
+
+if (arch === 'x64') {
+  if (platform === 'linux') {
+    filename = `../target/x86_64-unknown-linux-gnu/release/librustybun.so`
+  } else if (platform === 'darwin') {
+    filename = `../target/x86_64-apple-darwin/release/librustybun.dylib`
+  }
+} else {
+  if (platform === 'darwin') {
+    filename = `../target/aarch64-apple-darwin/release/librustybun.dylib`
+  }
+}
+
 const location = new URL(filename, import.meta.url).pathname
 export const {
   symbols

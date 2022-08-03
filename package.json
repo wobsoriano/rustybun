@@ -20,7 +20,9 @@
   },
   "files": [
     "dist",
-    "target/release/librustybun.dylib"
+    "target/x86_64-unknown-linux-gnu/release/librustybun.so",
+    "target/x86_64-apple-darwin/release/librustybun.dylib",
+    "target/aarch64-apple-darwin/release/librustybun.dylib"
   ],
   "keywords": [
     "bun",
