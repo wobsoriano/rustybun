@@ -1,6 +1,6 @@
 {
   "name": "rustybun",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,6 +21,7 @@
   "files": [
     "dist",
     "target/x86_64-unknown-linux-gnu/release/librustybun.so",
+    "target/aarch64-unknown-linux-gnu/release/librustybun.so",
     "target/x86_64-apple-darwin/release/librustybun.dylib",
     "target/aarch64-apple-darwin/release/librustybun.dylib"
   ],
