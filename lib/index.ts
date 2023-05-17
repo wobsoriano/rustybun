@@ -1,8 +1,8 @@
-import { ptr } from 'bun:ffi'
+import { Pointer, ptr } from 'bun:ffi'
 import { symbols, encode } from './ffi'
 
 class RustyBun {
-  #rl: bigint
+  #rl: Pointer
 
   constructor() {
     this.#rl = symbols.create()
@@ -10,7 +10,7 @@ class RustyBun {
 
   readline(prompt = '>> ') {
     const str = symbols.readline(this.#rl, ptr(encode(prompt)))
-    const signal: 'CtrlC' | 'CtrlD' | { Success: string[] } = JSON.parse(str)
+    const signal: 'CtrlC' | 'CtrlD' | { Success: string[] } = JSON.parse(str.toString())
     if (signal === 'CtrlC') {
       return {
         signal: 'CtrlC',
