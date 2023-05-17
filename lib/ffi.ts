@@ -11,7 +11,9 @@ if (arch === 'x64') {
     filename = `../target/x86_64-apple-darwin/release/librustybun.dylib`
   }
 } else {
-  if (platform === 'darwin') {
+  if (platform === 'linux') {
+    filename = `../target/aarch64-unknown-linux-gnu/release/librustybun.so`
+  } else if (platform === 'darwin') {
     filename = `../target/aarch64-apple-darwin/release/librustybun.dylib`
   }
 }
